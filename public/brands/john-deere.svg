@@ -1,0 +1,5 @@
+<svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 15H100V45H20V15Z" fill="#367C2B"/>
+  <path d="M60 20L80 40H40L60 20Z" fill="#FFCC00"/>
+  <text x="60" y="50" font-family="Arial" font-size="8" fill="white" text-anchor="middle">JOHN DEERE</text>
+</svg>
