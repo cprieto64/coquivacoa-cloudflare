@@ -108,7 +108,7 @@ export default function Header({ currentPath = "" }: HeaderProps) {
           </div>
           <div className="flex items-center space-x-1">
             <Mail className="h-3 w-3 text-orange-600" />
-            <span className="text-gray-700">contacto@coquivacoaservicios.com</span>
+            <span className="text-gray-700">coquivacoaservicios@gmail.com</span>
           </div>
         </div>
       </div>
