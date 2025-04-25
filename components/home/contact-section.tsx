@@ -32,8 +32,8 @@ export function ContactSection() {
             <h3 className="text-xl font-bold mb-3">Visítanos</h3>
             <p className="text-gray-300 mb-4">Nuestro taller especializado</p>
             <p className="text-orange-400">
-              Av. Principal, Sector Industrial, <br />
-              Maracaibo, Zulia
+              Calle Cotopaul entre N y O, <br />
+               Ciudad Ojeda, Zulia
             </p>
           </div>
 
