@@ -92,7 +92,7 @@ export default function Header({ currentPath = "" }: HeaderProps) {
   }, [])
 
   return (
-    <div className="bg-gradient-to-r from-white to-gray-200 sticky top-0 z-50 shadow-md">
+    <header className="bg-gradient-to-r from-white to-gray-200 sticky top-0 z-50 shadow-md">
       {/* Barra superior */}
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-2 px-4 text-sm border-b border-gray-300 hidden md:flex">
         <div className="flex items-center space-x-4 mb-2 md:mb-0">
@@ -108,19 +108,25 @@ export default function Header({ currentPath = "" }: HeaderProps) {
           </div>
           <div className="flex items-center space-x-1">
             <Mail className="h-3 w-3 text-orange-600" />
-            <span className="text-gray-700">contacto@coquivacoa.com.ve</span>
+            <span className="text-gray-700">contacto@coquivacoaservicios.com</span>
           </div>
         </div>
       </div>
 
       {/* Navegación principal */}
-      <div className="container mx-auto flex justify-between items-center py-4 px-4">
+      <nav className="container mx-auto flex justify-between items-center py-4 px-4" aria-label="Navegación principal">
         <div className="flex items-center">
-          <Image src="/coquivacoa-header.png" alt="Coquivacoa C.A." width={180} height={60} className="mr-8" />
+          <Link href="/" aria-label="Ir a la página de inicio">
+            <Image src="/coquivacoa-header.png" alt="Coquivacoa C.A." width={180} height={60} className="mr-8" />
+          </Link>
         </div>
 
         {/* Menú de escritorio mejorado */}
-        <div className="hidden md:flex space-x-1 text-gray-700 font-medium">
+        <div
+          className="hidden md:flex space-x-1 text-gray-700 font-medium"
+          role="navigation"
+          aria-label="Menú principal"
+        >
           <Link
             href="/"
             className={
@@ -424,7 +430,7 @@ export default function Header({ currentPath = "" }: HeaderProps) {
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-      </div>
+      </nav>
 
       {/* Menú móvil completamente rediseñado */}
       {isMenuOpen && (
@@ -436,7 +442,9 @@ export default function Header({ currentPath = "" }: HeaderProps) {
             {/* Cabecera del menú */}
             <div className="flex justify-between items-center p-4 border-b border-gray-100">
               <div className="flex items-center">
-                <Image src="/coquivacoa-header.png" alt="Coquivacoa C.A." width={160} height={50} />
+                <Link href="/" onClick={toggleMenu} aria-label="Ir a la página de inicio">
+                  <Image src="/coquivacoa-header.png" alt="Coquivacoa C.A." width={160} height={50} />
+                </Link>
               </div>
               <button
                 onClick={toggleMenu}
@@ -651,6 +659,6 @@ export default function Header({ currentPath = "" }: HeaderProps) {
           </div>
         </div>
       )}
-    </div>
+    </header>
   )
 }

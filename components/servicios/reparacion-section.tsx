@@ -49,7 +49,7 @@ export function ReparacionSection() {
               <div className="aspect-square relative">
                 <Image
                   src="/images/gallery/engine-maintenance.png"
-                  alt="Reparación de motor"
+                  alt="Técnico realizando mantenimiento de motor de generador industrial"
                   fill
                   className="object-cover rounded-xl"
                 />
@@ -57,7 +57,7 @@ export function ReparacionSection() {
               <div className="aspect-square relative mt-8">
                 <Image
                   src="/images/gallery/technician-confined.png"
-                  alt="Reparación de alternador"
+                  alt="Especialista trabajando en espacio confinado para reparación de generador"
                   fill
                   className="object-cover rounded-xl"
                 />
@@ -65,7 +65,7 @@ export function ReparacionSection() {
               <div className="aspect-square relative -mt-8">
                 <Image
                   src="/images/gallery/worker-cables.png"
-                  alt="Reparación de panel"
+                  alt="Técnico reparando cableado eléctrico de panel de control"
                   fill
                   className="object-cover rounded-xl"
                 />
@@ -73,7 +73,7 @@ export function ReparacionSection() {
               <div className="aspect-square relative">
                 <Image
                   src="/images/gallery/drilling-platform.png"
-                  alt="Reparación de sistema"
+                  alt="Plataforma de trabajo para mantenimiento de sistemas de generación"
                   fill
                   className="object-cover rounded-xl"
                 />
