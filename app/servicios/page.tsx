@@ -10,7 +10,6 @@ import { ServicioEnSitioSection } from "@/components/servicios/servicio-en-sitio
 import { MarcasSection } from "@/components/servicios/marcas-section"
 import { CTASection } from "@/components/servicios/cta-section"
 import Script from "next/script"
-import { AudioPlayer } from "@/components/audio-player"
 
 export const metadata: Metadata = {
   title: "Servicios de Mantenimiento y Reparación de Generadores | Coquivacoa C.A.",
@@ -51,60 +50,59 @@ export default function ServiciosPage() {
 
       <WhatsappButton />
       <Footer />
-      <AudioPlayer />
       <Script id="schema-services" type="application/ld+json">
         {`
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "itemListElement": [
-          {
-            "@type": "Service",
-            "position": 1,
-            "name": "Mantenimiento Preventivo de Generadores",
-            "url": "https://coquivacoaservicios.com/servicios#mantenimiento",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Coquivacoa C.A."
-            },
-            "description": "Planes de mantenimiento periódicos para garantizar el funcionamiento estable de generadores industriales."
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "position": 1,
+          "name": "Mantenimiento Preventivo de Generadores",
+          "url": "https://coquivacoaservicios.com/servicios#mantenimiento",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Coquivacoa C.A."
           },
-          {
-            "@type": "Service",
-            "position": 2,
-            "name": "Reparación de Generadores",
-            "url": "https://coquivacoaservicios.com/servicios#reparacion",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Coquivacoa C.A."
-            },
-            "description": "Soluciones rápidas y efectivas para cualquier falla en generadores industriales."
+          "description": "Planes de mantenimiento periódicos para garantizar el funcionamiento estable de generadores industriales."
+        },
+        {
+          "@type": "Service",
+          "position": 2,
+          "name": "Reparación de Generadores",
+          "url": "https://coquivacoaservicios.com/servicios#reparacion",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Coquivacoa C.A."
           },
-          {
-            "@type": "Service",
-            "position": 3,
-            "name": "Diagnóstico Técnico",
-            "url": "https://coquivacoaservicios.com/servicios#diagnostico",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Coquivacoa C.A."
-            },
-            "description": "Diagnósticos precisos con tecnología avanzada para detectar el origen de cualquier fallo."
+          "description": "Soluciones rápidas y efectivas para cualquier falla en generadores industriales."
+        },
+        {
+          "@type": "Service",
+          "position": 3,
+          "name": "Diagnóstico Técnico",
+          "url": "https://coquivacoaservicios.com/servicios#diagnostico",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Coquivacoa C.A."
           },
-          {
-            "@type": "Service",
-            "position": 4,
-            "name": "Servicio en Sitio",
-            "url": "https://coquivacoaservicios.com/servicios#servicio-en-sitio",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Coquivacoa C.A."
-            },
-            "description": "Atención directa donde se encuentra tu equipo en cualquier parte de Venezuela."
-          }
-        ]
-      }
-    `}
+          "description": "Diagnósticos precisos con tecnología avanzada para detectar el origen de cualquier fallo."
+        },
+        {
+          "@type": "Service",
+          "position": 4,
+          "name": "Servicio en Sitio",
+          "url": "https://coquivacoaservicios.com/servicios#servicio-en-sitio",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Coquivacoa C.A."
+          },
+          "description": "Atención directa donde se encuentra tu equipo en cualquier parte de Venezuela."
+        }
+      ]
+    }
+  `}
       </Script>
     </div>
   )
