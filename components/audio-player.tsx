@@ -6,21 +6,24 @@ import { Play, Pause, Volume2, VolumeX } from "lucide-react"
 export function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
-  const [audioError, setAudioError] = useState<string | null>(null)
   const [audioLoaded, setAudioLoaded] = useState(false)
+  const [audioError, setAudioError] = useState<string | null>(null)
   const audioRef = useRef<HTMLAudioElement | null>(null)
+
+  // URL externa del archivo de audio proporcionada por el usuario
+  const audioUrl = "https://litmarket.co/slidecf/wp-content/uploads/2025/04/sin-rencor.mp3"
 
   useEffect(() => {
     // Crear el elemento de audio programáticamente
     const audio = new Audio()
-    audio.src = "/sin-rencor.mp3"
-    audio.preload = "auto"
-    audio.loop = true
 
-    // Manejar eventos
+    // Configurar los manejadores de eventos antes de asignar la fuente
     audio.addEventListener("canplaythrough", () => {
       console.log("Audio can play through")
       setAudioLoaded(true)
+
+      // Intentar reproducir automáticamente cuando el audio esté listo
+      tryAutoplay(audio)
     })
 
     audio.addEventListener("error", (e) => {
@@ -31,34 +34,48 @@ export function AudioPlayer() {
     audio.addEventListener("play", () => setIsPlaying(true))
     audio.addEventListener("pause", () => setIsPlaying(false))
 
+    // Configurar el audio
+    audio.src = audioUrl
+    audio.preload = "auto"
+    audio.loop = true
+
+    // Asignar la referencia
     audioRef.current = audio
 
-    // Verificar si el archivo existe
-    fetch("/sin-rencor.mp3")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Archivo no encontrado: ${response.status}`)
-        }
-        console.log("Archivo de audio encontrado")
-      })
-      .catch((error) => {
-        console.error("Error verificando archivo de audio:", error)
-        setAudioError(`No se pudo cargar el archivo: ${error.message}`)
-      })
+    // Función para intentar el autoplay
+    const tryAutoplay = (audioElement: HTMLAudioElement) => {
+      const playPromise = audioElement.play()
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log("Autoplay successful")
+            setIsPlaying(true)
+          })
+          .catch((error) => {
+            console.log("Autoplay prevented:", error)
+            // No mostrar error, es normal que el autoplay sea bloqueado
+          })
+      }
+    }
 
     return () => {
       if (audioRef.current) {
         audioRef.current.pause()
         audioRef.current.src = ""
-        audioRef.current.remove()
+
+        // Eliminar los event listeners
+        audio.removeEventListener("canplaythrough", () => {})
+        audio.removeEventListener("error", () => {})
+        audio.removeEventListener("play", () => {})
+        audio.removeEventListener("pause", () => {})
       }
     }
-  }, [])
+  }, [audioUrl])
 
+  // Efecto para manejar la interacción del usuario y habilitar el autoplay
   useEffect(() => {
-    // Intentar reproducir cuando el usuario interactúa con la página
     const handleUserInteraction = () => {
-      if (audioRef.current && audioLoaded) {
+      if (audioRef.current && audioLoaded && !isPlaying) {
         const playPromise = audioRef.current.play()
         if (playPromise !== undefined) {
           playPromise
@@ -68,7 +85,7 @@ export function AudioPlayer() {
               cleanup()
             })
             .catch((error) => {
-              console.log("Autoplay prevented:", error)
+              console.log("Play after interaction prevented:", error)
             })
         }
       }
@@ -80,12 +97,17 @@ export function AudioPlayer() {
       document.removeEventListener("keydown", handleUserInteraction)
     }
 
-    document.addEventListener("click", handleUserInteraction)
-    document.addEventListener("touchstart", handleUserInteraction)
-    document.addEventListener("keydown", handleUserInteraction)
+    // Solo agregar los listeners si el audio está cargado pero no reproduciendo
+    if (audioLoaded && !isPlaying) {
+      document.addEventListener("click", handleUserInteraction)
+      document.addEventListener("touchstart", handleUserInteraction)
+      document.addEventListener("keydown", handleUserInteraction)
 
-    return cleanup
-  }, [audioLoaded])
+      return cleanup
+    }
+
+    return () => {}
+  }, [audioLoaded, isPlaying])
 
   const togglePlay = () => {
     if (audioRef.current) {
