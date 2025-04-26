@@ -20,8 +20,8 @@ export function ContactSection() {
             </div>
             <h3 className="text-xl font-bold mb-3">Llámanos</h3>
             <p className="text-gray-300 mb-4">Atención directa y personalizada</p>
-            <a href="tel:+584241234567" className="inline-flex items-center text-orange-400 hover:text-orange-300">
-              +58 424 123 4567
+            <a href="tel:+584146564333" className="inline-flex items-center text-orange-400 hover:text-orange-300">
+              +58 04146564333
             </a>
           </div>
 
@@ -32,8 +32,8 @@ export function ContactSection() {
             <h3 className="text-xl font-bold mb-3">Visítanos</h3>
             <p className="text-gray-300 mb-4">Nuestro taller especializado</p>
             <p className="text-orange-400">
-              Calle Cotopaul entre N y O, <br />
-               Ciudad Ojeda, Zulia
+              4 Bocas, <br />
+              Bachaquero, Zulia
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export function ContactSection() {
                 consultas técnicas en cualquier parte del país.
               </p>
               <a
-                href="https://wa.me/584241234567"
+                href="https://wa.me/584146564333"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"

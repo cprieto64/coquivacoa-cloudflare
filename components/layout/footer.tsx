@@ -81,6 +81,7 @@ export function Footer() {
               coquivacoaservicios.com
             </a>
           </p>
+          <p className="mt-2 text-sm">4 Bocas, Bachaquero, Zulia</p>
         </div>
       </div>
     </footer>

@@ -10,6 +10,7 @@ import { ServicioEnSitioSection } from "@/components/servicios/servicio-en-sitio
 import { MarcasSection } from "@/components/servicios/marcas-section"
 import { CTASection } from "@/components/servicios/cta-section"
 import Script from "next/script"
+import { AudioPlayer } from "@/components/audio-player"
 
 export const metadata: Metadata = {
   title: "Servicios de Mantenimiento y Reparación de Generadores | Coquivacoa C.A.",
@@ -50,6 +51,7 @@ export default function ServiciosPage() {
 
       <WhatsappButton />
       <Footer />
+      <AudioPlayer />
       <Script id="schema-services" type="application/ld+json">
         {`
       {

@@ -104,7 +104,7 @@ export default function Header({ currentPath = "" }: HeaderProps) {
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-1">
             <Phone className="h-3 w-3 text-orange-600" />
-            <span className="text-gray-700">+58 424 123 4567</span>
+            <span className="text-gray-700">+58 04146564333</span>
           </div>
           <div className="flex items-center space-x-1">
             <Mail className="h-3 w-3 text-orange-600" />

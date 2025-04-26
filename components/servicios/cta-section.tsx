@@ -15,7 +15,7 @@ export function CTASection() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/584241234567"
+                href="https://wa.me/584146564333"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-white text-orange-600 hover:bg-gray-100 px-6 py-3 rounded-md transition-colors"
@@ -33,7 +33,7 @@ export function CTASection() {
                 Contactar por WhatsApp
               </a>
               <a
-                href="tel:+584241234567"
+                href="tel:+584146564333"
                 className="inline-flex items-center justify-center bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-md transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />

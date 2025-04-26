@@ -9,6 +9,7 @@ import { GallerySection } from "@/components/gallery-section"
 import { BrandsSection } from "@/components/home/brands-section"
 import { ContactSection } from "@/components/home/contact-section"
 import Script from "next/script"
+import { AudioPlayer } from "@/components/audio-player"
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
 
       <WhatsappButton />
       <Footer />
+      <AudioPlayer />
       <Script id="schema-organization" type="application/ld+json">
         {`
       {
@@ -35,11 +37,11 @@ export default function Home() {
         "name": "Coquivacoa C.A.",
         "image": "https://coquivacoaservicios.com/coquivacoa-header.png",
         "url": "https://coquivacoaservicios.com",
-        "telephone": "+584241234567",
+        "telephone": "+58 04146564333",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Calle Cotopaul entre N y O",
-          "addressLocality": "Ciudad Ojeda",
+          "streetAddress": "4 Bocas",
+          "addressLocality": "Bachaquero",
           "addressRegion": "Zulia",
           "postalCode": "4019",
           "addressCountry": "VE"
