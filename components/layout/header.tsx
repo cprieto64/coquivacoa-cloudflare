@@ -418,10 +418,12 @@ export default function Header({ currentPath = "" }: HeaderProps) {
         </div>
 
         <div className="flex items-center space-x-2">
-          <Button className="bg-orange-600 hover:bg-orange-700 text-white md:block">
-            <span className="hidden md:inline">Solicita una cotización</span>
-            <span className="md:hidden">Contacto</span>
-          </Button>
+          <a href="https://wa.me/584146564333" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white md:block">
+              <span className="hidden md:inline">Solicita una cotización</span>
+              <span className="md:hidden">Contacto</span>
+            </Button>
+          </a>
           <button
             onClick={toggleMenu}
             className="md:hidden p-2 text-gray-700 hover:text-orange-600 focus:outline-none"

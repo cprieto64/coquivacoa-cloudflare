@@ -17,7 +17,9 @@ export function CoberturaSection() {
                 Desde Zulia hasta Bolívar, desde Táchira hasta Nueva Esparta, llevamos nuestro servicio especializado a
                 donde lo necesites.
               </p>
-              <Button className="bg-white text-orange-600 hover:bg-gray-100 mb-8 md:mb-0">Solicitar servicio</Button>
+              <a href="https://wa.me/584146564333" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-white text-orange-600 hover:bg-gray-100 mb-8 md:mb-0">Solicitar servicio</Button>
+              </a>
             </div>
             <div className="md:w-1/3 flex justify-center mt-10 md:mt-0">
               <Image src="/map-venezuela.png" alt="Mapa de Venezuela" width={250} height={250} className="opacity-90" />

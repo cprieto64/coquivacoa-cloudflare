@@ -67,7 +67,11 @@ export function QueHacemosSection() {
               ))}
             </div>
 
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3">Solicita una cotización</Button>
+            <a href="https://wa.me/584146564333" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3">
+                Solicita una cotización
+              </Button>
+            </a>
           </div>
 
           <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-xl shadow-xl">

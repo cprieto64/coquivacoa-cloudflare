@@ -1,6 +1,7 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Truck, Settings, Clock } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Truck, Settings, Clock } from "lucide-react";
 
 export function ServicioEnSitioSection() {
   return (
@@ -105,10 +106,14 @@ export function ServicioEnSitioSection() {
               </div>
             </div>
 
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white">Solicitar servicio</Button>
+            <Link href="https://wa.me/584146564333" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-orange-600 hover:bg-orange-700 text-white">
+                Solicitar servicio
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

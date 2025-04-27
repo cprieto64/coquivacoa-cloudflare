@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
@@ -21,9 +22,11 @@ export function HeroSection() {
             Atención especializada en equipos Caterpillar, John Deere y Cummins. Servicio en sitio o en taller en todo
             el territorio venezolano.
           </p>
-          <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-lg rounded-md">
-            Contáctanos por WhatsApp
-          </Button>
+          <Link href="https://wa.me/584146564333" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-lg rounded-md">
+              Contáctanos por WhatsApp
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
